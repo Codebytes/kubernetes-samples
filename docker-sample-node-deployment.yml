@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: docker-sample-node
+    component: web
+  name: docker-sample-node
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: docker-sample-node
+  template:
+    metadata:
+      labels:
+        app: docker-sample-node
+        component: web
+    spec:
+      containers:
+      - image: codebytes/docker-sample-node
+        name: docker-sample-node

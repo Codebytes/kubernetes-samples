@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: docker-sample-node
+  labels: 
+    component: web
+spec:
+  containers:
+    - name: docker-sample-node
+      image: codebytes/docker-sample-node:latest
+      ports: 
+      - containerPort: 8080
+      resources:
+        limits:
+          cpu: "100m"
+          memory: "100Mi"
